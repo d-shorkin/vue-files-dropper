@@ -1,6 +1,7 @@
 {
   "name": "vue-files-dropper",
   "version": "0.1.0",
+  "main": "./dist/vue-files-dropper.js",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
