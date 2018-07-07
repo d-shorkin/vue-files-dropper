@@ -19,6 +19,13 @@
     "sass-loader": "^7.0.1",
     "vue-template-compiler": "^2.5.16"
   },
+  "files": [
+    "dist/*",
+    "src/*",
+    "public/*",
+    "*.json",
+    "*.js"
+  ],
   "browserslist": [
     "> 1%",
     "last 2 versions",
