@@ -9,6 +9,11 @@ Simple input for drop files on vue
 npm install vue-files-dropper --save
 ```
 
+```ecmascript 6
+import "vue-files-dropper";
+import "vue-files-dropper/dist/vue-files-dropper.css";
+```
+
 ## Usage
 Use it with `v-model` :
 ```vue
