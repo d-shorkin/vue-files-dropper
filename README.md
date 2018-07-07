@@ -1,6 +1,8 @@
 # Vue Files Dropper
 Simple input for drop files on vue
 
+### [Live Demo](https://d-shorkin.github.io/vue-files-dropper/)
+
 ## Install
 ### npm
 ```
