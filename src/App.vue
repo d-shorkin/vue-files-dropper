@@ -29,12 +29,8 @@
 
 <script>
 
-import VueFilesDropper from "./components/VueFilesDropper";
 export default {
   name: 'app',
-  components: {
-    VueFilesDropper
-  },
   watch:{
     files(files){
       console.log(files)
@@ -75,7 +71,7 @@ export default {
 
     &:not(.disabled){
       &:hover, &.hover{
-        background: chocolate;
+        background: chocolate !important;
         color: white;
         border-color: darken(chocolate, 5);
 
