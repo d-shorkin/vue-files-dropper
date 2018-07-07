@@ -2,8 +2,8 @@
   "name": "vue-files-dropper",
   "description": "Simple input for drop files on vue",
   "keywords": ["vue", "files", "file", "drop", "dropper"],
-  "version": "0.1.2",
-  "main": "./bundle/vue-files-dropper.js",
+  "version": "0.1.3",
+  "main": "./bundle/vue-files-dropper.common.js",
   "homepage": "https://github.com/d-shorkin/vue-files-dropper",
   "author": {
     "name": "Dmitriy Shorkin",
@@ -13,7 +13,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "build-bundle": "vue-cli-service build --target wc --dest ./bundle --name vue-files-dropper ./src/components/index.js"
+    "build-bundle": "vue-cli-service build --target lib --dest ./bundle --name vue-files-dropper ./src/components/index.js"
   },
   "dependencies": {
     "vue": "^2.5.16"
