@@ -103,7 +103,7 @@
   }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   .v-files-dropper{
     padding: 1em 2em;
     width: 100%;
