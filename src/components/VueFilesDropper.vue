@@ -62,9 +62,11 @@
     methods:{
       onChange(e){
         this.emit(e.target.files)
+        this.$emit('change');
       },
       onDrop(e){
         this.emit(e.dataTransfer.files);
+        this.$emit('change');
         this.hover = false;
       },
       onClick(e){
@@ -80,17 +82,14 @@
       },
       clear(){
         if(this.multiple && this.value.length){
-          this.$emit('change');
           this.$emit('input', [] );
-        }else if(!this.multiple && this.value){
           this.$emit('change');
+        }else if(!this.multiple && this.value){
           this.$emit('input', null);
+          this.$emit('change');
         }
       },
       emit(files){
-
-        this.$emit('change');
-
         if(!this.multiple)
           return this.$emit('input', files[0]);
 
