@@ -2,7 +2,7 @@
   <div id="app">
     <h1>Vue files dropper</h1>
     <div class="group">
-      <vue-files-dropper v-model="files" multiple class="test" @change="changed++">
+      <vue-files-dropper v-model="files" multiple class="test" @change="changed++" accept="image/*">
         <div v-if="!files.length">
           <small>Custom multiple input</small>
           <br/>Drop files here

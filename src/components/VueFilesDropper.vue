@@ -16,6 +16,7 @@
            ref="input"
            :disabled="disabled"
            :multiple="multiple"
+           :accept="accept"
            @change="onChange"/>
   </div>
 </template>
@@ -27,10 +28,14 @@
       placeholder: String,
       value:{},
       multiple: Boolean,
-      disabled: Boolean
+      disabled: Boolean,
+      accept: {
+        type:String,
+        default: '*/*'
+      }
     },
     data: ()=>({
-      hover: false,
+      hover: false
     }),
     computed: {
       classes(){
@@ -42,10 +47,13 @@
         if(this.disabled)
           classes.push('disabled');
 
-        if(this.hover && this.disabled)
+        if( this.hover && this.disabled )
           classes.push('error');
 
         return classes;
+      },
+      acceptMimes(){
+        return this.accept.split(',').map(item=>item.trim().split('/'));
       },
       canClear(){
         if(this.disabled)
@@ -55,17 +63,15 @@
           return true;
 
         return !!(!this.multiple && this.value);
-
-
       }
     },
     methods:{
       onChange(e){
-        this.emit(e.target.files)
+        this.emit(Array.from(e.target.files));
         this.$emit('change');
       },
       onDrop(e){
-        this.emit(e.dataTransfer.files);
+        this.emit(Array.from(e.dataTransfer.files));
         this.$emit('change');
         this.hover = false;
       },
@@ -90,13 +96,34 @@
         }
       },
       emit(files){
+        if(!this.filesAccept(files))
+          return false;
+
         if(!this.multiple)
           return this.$emit('input', files[0]);
 
         if(!this.value)
-          return this.$emit('input', Array.from(files) );
+          return this.$emit('input', files );
 
-        return this.$emit('input', this.value.concat(Array.from(files)) );
+        return this.$emit('input', Array.from(files) );
+      },
+      filesAccept(files){
+        return files.every((file)=>{
+          let type = file.type.split('/');
+          return this.acceptMimes.some((accepted)=>{
+            if(
+              accepted[0] === '*' ||
+              (accepted[0] === type[0] && accepted[1] === '*') ||
+              (accepted[0] === type[0] && accepted[1] === type[1])
+            ){
+              return true;
+            }
+
+            let error = new Error(`File ${file.name} has not accepted type ${file.type}`);
+            this.$emit('error',error);
+            throw error;
+          });
+        });
       }
     }
   }

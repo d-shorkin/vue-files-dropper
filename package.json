@@ -2,7 +2,7 @@
   "name": "vue-files-dropper",
   "description": "Simple input for drop files on vue",
   "keywords": ["vue", "files", "file", "drop", "dropper"],
-  "version": "0.1.9",
+  "version": "0.1.10",
   "main": "./dist/vue-files-dropper.common.js",
   "homepage": "https://github.com/d-shorkin/vue-files-dropper",
   "author": {
