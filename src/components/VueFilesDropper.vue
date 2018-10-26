@@ -88,9 +88,11 @@
       },
       clear(){
         if(this.multiple && this.value.length){
+          this.$refs.input.value = '';
           this.$emit('input', [] );
           this.$emit('change');
         }else if(!this.multiple && this.value){
+          this.$refs.input.value = '';
           this.$emit('input', null);
           this.$emit('change');
         }
