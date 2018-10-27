@@ -88,16 +88,16 @@
       },
       clear(){
         if(this.multiple && this.value.length){
-          this.reset();
+          this.resetInput();
           this.$emit('input', [] );
           this.$emit('change');
         }else if(!this.multiple && this.value){
-          this.reset();
+          this.resetInput();
           this.$emit('input', null);
           this.$emit('change');
         }
       },
-      reset(){
+      resetInput(){
         const input = this.$refs.input;
         input.type = 'text';
         input.type = 'file';
