@@ -87,6 +87,7 @@
           this.clear();
       },
       clear(){
+        this.resetInput();
         if(this.multiple && this.value.length){
           this.$emit('input', [] );
           this.$emit('change');
@@ -94,6 +95,11 @@
           this.$emit('input', null);
           this.$emit('change');
         }
+      },
+      resetInput(){
+        const input = this.$refs.input;
+        input.type = 'text';
+        input.type = 'file';
       },
       emit(files){
         if(!this.filesAccept(files))
