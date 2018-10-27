@@ -88,14 +88,19 @@
       },
       clear(){
         if(this.multiple && this.value.length){
-          this.$refs.input.value = '';
+          this.reset();
           this.$emit('input', [] );
           this.$emit('change');
         }else if(!this.multiple && this.value){
-          this.$refs.input.value = '';
+          this.reset();
           this.$emit('input', null);
           this.$emit('change');
         }
+      },
+      reset(){
+        const input = this.$refs.input;
+        input.type = 'text';
+        input.type = 'file';
       },
       emit(files){
         if(!this.filesAccept(files))
