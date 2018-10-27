@@ -8,13 +8,20 @@
     "drop",
     "dropper"
   ],
-  "version": "0.1.11",
+  "version": "0.1.12",
   "main": "./dist/vue-files-dropper.common.js",
   "homepage": "https://github.com/d-shorkin/vue-files-dropper",
   "author": {
     "name": "Dmitriy Shorkin",
-    "email": "d.shorkin@gmail.com"
+    "email": "d.shorkin@gmail.com",
+    "url": "https://github.com/d-shorkin"
   },
+  "contributors": [
+    {
+      "name": "Vlad Nerbeer",
+      "url": "https://github.com/Nerbeer"
+    }
+  ],
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --dest ./docs",
@@ -35,7 +42,6 @@
   "files": [
     "dist/*",
     "src/*",
-    "public/*",
     "*.json",
     "*.js"
   ],

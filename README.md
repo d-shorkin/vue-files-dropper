@@ -22,7 +22,7 @@ Use it with `v-model` :
 
 You can use `multiple` property:
 ```vue
-<vue-files-dropper v-model="file" multiple>Drop yor files</vue-files-dropper>
+<vue-files-dropper v-model="files" multiple>Drop yor files</vue-files-dropper>
 ```
 
 ## Customize
@@ -48,3 +48,7 @@ You can add class and customize input.
     }
   }
 ```
+
+#### Contributors
+
+- [Vlad Nerbeer](https://github.com/Nerbeer)
