@@ -87,12 +87,11 @@
           this.clear();
       },
       clear(){
+        this.resetInput();
         if(this.multiple && this.value.length){
-          this.resetInput();
           this.$emit('input', [] );
           this.$emit('change');
         }else if(!this.multiple && this.value){
-          this.resetInput();
           this.$emit('input', null);
           this.$emit('change');
         }
